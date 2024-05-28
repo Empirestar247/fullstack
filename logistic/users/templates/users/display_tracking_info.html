@@ -1,0 +1,12 @@
+<table>
+    <tr>
+        <th>User</th>
+        <th>Tracking ID</th>
+    </tr>
+    {% for tracking in tracking_info %}
+        <tr>
+            <td>{{ tracking.user.username }}</td>
+            <td>{{ tracking.tracking_id }}</td>
+        </tr>
+    {% endfor %}
+</table>

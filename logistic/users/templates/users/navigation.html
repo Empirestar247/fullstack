@@ -1,0 +1,21 @@
+{% for tracking in tracking_info %}
+    <p>{{ tracking.tracking_id }}</p>
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if tracking_info.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ tracking_info.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ tracking_info.number }} of {{ tracking_info.paginator.num_pages }}.
+        </span>
+
+        {% if tracking_info.has_next %}
+            <a href="?page={{ tracking_info.next_page_number }}">next</a>
+            <a href="?page={{ tracking_info.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
